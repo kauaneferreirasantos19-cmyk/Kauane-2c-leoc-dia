@@ -1,0 +1,322 @@
+/* =========================
+   CONFIGURAÇÕES GERAIS
+   ========================= */
+
+:root {
+    --cor-fundo: #f5f7fa;
+    --cor-texto: #17202a;
+    --cor-titulo: #0b3d91;
+    --cor-destaque: #005fcc;
+    --cor-fundo-controle: #ffffff;
+    --cor-borda: #1f2937;
+
+    --tamanho-base: 1.125rem;
+    --altura-linha: 1.8;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    margin: 0;
+    background-color: var(--cor-fundo);
+    color: var(--cor-texto);
+
+    font-family:
+        Arial,
+        Helvetica,
+        sans-serif;
+
+    font-size: var(--tamanho-base);
+    line-height: var(--altura-linha);
+}
+
+/* =========================
+   ACESSIBILIDADE
+   ========================= */
+
+.skip-link {
+    position: absolute;
+    left: -9999px;
+    top: 10px;
+
+    background: #000;
+    color: #fff;
+
+    padding: 12px 18px;
+    z-index: 1000;
+
+    font-weight: bold;
+}
+
+.skip-link:focus {
+    left: 10px;
+}
+
+/*
+   Indicador de foco bastante visível.
+   Importante para usuários que navegam somente pelo teclado.
+*/
+
+button:focus,
+a:focus,
+main:focus {
+    outline: 4px solid #ffbf00;
+    outline-offset: 3px;
+}
+
+/* =========================
+   CONTAINER
+   ========================= */
+
+.container {
+    width: min(100% - 32px, 900px);
+    margin: 0 auto;
+}
+
+/* =========================
+   CABEÇALHO
+   ========================= */
+
+.cabecalho {
+    background-color: #0b3d91;
+    color: #ffffff;
+
+    padding: 40px 0;
+}
+
+.cabecalho h1 {
+    margin-top: 0;
+    margin-bottom: 16px;
+
+    font-size: clamp(2rem, 5vw, 3rem);
+    line-height: 1.2;
+}
+
+.introducao {
+    margin: 0;
+
+    font-size: 1.2rem;
+}
+
+/* =========================
+   BARRA DE ACESSIBILIDADE
+   ========================= */
+
+.barra-acessibilidade {
+    background-color: #ffffff;
+    border-bottom: 2px solid var(--cor-borda);
+
+    padding: 16px 0;
+
+    position: sticky;
+    top: 0;
+
+    z-index: 100;
+}
+
+.controles {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+button {
+    min-height: 48px;
+
+    padding: 10px 16px;
+
+    border: 2px solid #111827;
+    border-radius: 6px;
+
+    background-color: var(--cor-fundo-controle);
+    color: #111827;
+
+    font-size: 1rem;
+    font-weight: bold;
+
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #e5e7eb;
+}
+
+/* =========================
+   CONTEÚDO
+   ========================= */
+
+main {
+    padding: 45px 0;
+}
+
+.texto {
+    background-color: #ffffff;
+
+    border: 2px solid #cbd5e1;
+    border-radius: 10px;
+
+    padding: clamp(24px, 5vw, 48px);
+
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+}
+
+section {
+    margin-bottom: 40px;
+}
+
+section:last-child {
+    margin-bottom: 0;
+}
+
+h2 {
+    color: var(--cor-titulo);
+
+    font-size: 1.7rem;
+    line-height: 1.3;
+
+    margin-top: 0;
+    margin-bottom: 16px;
+}
+
+p {
+    margin-top: 0;
+    margin-bottom: 20px;
+}
+
+/* =========================
+   RODAPÉ
+   ========================= */
+
+.rodape {
+    background-color: #17202a;
+    color: #ffffff;
+
+    padding: 30px 0;
+
+    text-align: center;
+}
+
+/* =========================
+   MODO ESCURO
+   ========================= */
+
+body.modo-escuro {
+    --cor-fundo: #101418;
+    --cor-texto: #f5f5f5;
+    --cor-titulo: #8ab4ff;
+    --cor-fundo-controle: #20262d;
+    --cor-borda: #ffffff;
+}
+
+body.modo-escuro .texto {
+    background-color: #1b2127;
+    border-color: #ffffff;
+}
+
+body.modo-escuro .barra-acessibilidade {
+    background-color: #151a1f;
+    border-color: #ffffff;
+}
+
+body.modo-escuro button {
+    background-color: #20262d;
+    color: #ffffff;
+    border-color: #ffffff;
+}
+
+body.modo-escuro button:hover {
+    background-color: #333b44;
+}
+
+/* =========================
+   ALTO CONTRASTE
+   ========================= */
+
+body.alto-contraste {
+    --cor-fundo: #000000;
+    --cor-texto: #ffffff;
+    --cor-titulo: #ffff00;
+    --cor-fundo-controle: #000000;
+    --cor-borda: #ffffff;
+}
+
+body.alto-contraste .cabecalho {
+    background-color: #000000;
+    color: #ffff00;
+    border-bottom: 3px solid #ffffff;
+}
+
+body.alto-contraste .texto {
+    background-color: #000000;
+    border: 3px solid #ffffff;
+    box-shadow: none;
+}
+
+body.alto-contraste .barra-acessibilidade {
+    background-color: #000000;
+    border-color: #ffffff;
+}
+
+body.alto-contraste button {
+    background-color: #000000;
+    color: #ffffff;
+    border: 3px solid #ffffff;
+}
+
+body.alto-contraste button:hover {
+    background-color: #ffffff;
+    color: #000000;
+}
+
+body.alto-contraste .rodape {
+    background-color: #000000;
+    border-top: 3px solid #ffffff;
+}
+
+/* =========================
+   RESPONSIVIDADE
+   ========================= */
+
+@media (max-width: 600px) {
+    .container {
+        width: min(100% - 20px, 900px);
+    }
+
+    .cabecalho {
+        padding: 30px 0;
+    }
+
+    .texto {
+        padding: 22px;
+    }
+
+    .controles {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+    }
+
+    button {
+        width: 100%;
+    }
+}
+
+/* =========================
+   REDUÇÃO DE ANIMAÇÕES
+   ========================= */
+
+@media (prefers-reduced-motion: reduce) {
+    html {
+        scroll-behavior: auto;
+    }
+
+    * {
+        animation: none !important;
+        transition: none !important;
+    }
+}
